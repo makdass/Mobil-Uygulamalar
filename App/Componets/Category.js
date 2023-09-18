@@ -1,7 +1,9 @@
-import React from 'react'
-import { FlatList ,TouchableOpacity,View,Text, StyleSheet} from 'react-native'
+import React, { useState } from 'react'
+import { FlatList ,TouchableOpacity,View,Text, StyleSheet, TouchableHighlight} from 'react-native'
+import color from '../Shared/color'
 
 function Category() {
+    const [active ,setActive]=useState(1)
     const CategoryList = [
         {
             id:1,
@@ -24,21 +26,26 @@ function Category() {
             name:'Sanat'
         } ,   
     ]
+    const onCategoryClick=(id)=>{
+        setActive(id)
+    }
   return (
     <View style={{marginTop:30}}>
 
-        <FlatList
+        <FlatList style={{marginLeft:15}}
         data={CategoryList}
         horizontal
         showsHorizontalScrollIndicator={false}
+        
         renderItem={({item}) => (
-            <TouchableOpacity>
-                <Text style={styles.SecilmemisYazi}>{item.name }</Text>
+            <TouchableOpacity onPress={()=>onCategoryClick(item.id) }>
+                <Text style={item.id==active?styles.SecilmisYazi:styles.SecilmemisYazi
+
+                    }>{item.name }</Text>
             </TouchableOpacity>
 
         )} />
-
- </View>
+</View>
         
 
 
@@ -55,10 +62,24 @@ function Category() {
 }  
   const styles = StyleSheet.create({
     SecilmemisYazi:{
-        marginRight:15,
-        fonstSize: 25,
-        fontWeight:'bold'
+
+        marginRight:20 ,
+        fontSize: 20,
+        fontWeight:'bold',
+        color:'#424242'
+    },
+    SecilmisYazi:{
+
+        marginRight:20 ,
+        fontSize: 20,
+        fontWeight:'bold',
+        color:'#4682b4',
     }
-  })
+    
+   
+  }) 
+  
+  
+ 
 
 export default Category
