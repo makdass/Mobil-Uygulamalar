@@ -6,9 +6,12 @@ import Home from './App/Screens/Home'
 import TopHeadLine from './App/Componets/TopHeadLine';
 export default function App() {
   return (
-   
-      <Category/>,
+   <View>
+    <Category/>
+  
       <TopHeadLine/>
+   </View>
+      
       
     
   );

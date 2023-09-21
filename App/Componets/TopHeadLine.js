@@ -20,12 +20,12 @@ function TopHeadLine() {
 
       <TouchableOpacity>
         <Image source={{uri:item.urlToImage}}
-        style={{height:350}}/>
+          style={{height:220}}/>
       </TouchableOpacity>
     )}
     
     />
-  </View>
+  </View> 
   )
 }
 
