@@ -4,12 +4,15 @@ import Category from './App/Componets/Category';
 import React from 'react';
 import Home from './App/Screens/Home'
 import TopHeadLine from './App/Componets/TopHeadLine';
+import HeadLine from './App/Componets/HeadLine';
 export default function App() {
   return (
    <View>
     <Category/>
   
-      <TopHeadLine/>
+  <TopHeadLine/>
+   
+    < HeadLine/>
    </View>
       
       
